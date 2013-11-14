@@ -120,47 +120,61 @@ class TC_header_main {
 	 * @since Customizr 3.0
 	 */
 	function tc_logo_title_display() {
-		tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
-       	$logo_src    			= esc_url ( tc__f( '__get_option' , 'tc_logo_upload') ) ;
-       	$logo_resize 			= esc_attr( tc__f( '__get_option' , 'tc_logo_resize') );
-      	$accepted_formats		= array('jpg', 'jpeg', 'png' ,'gif');
-       	$filetype 				= wp_check_filetype ($logo_src);
+            
+            tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
+            
+            $logo_src    	= esc_url ( tc__f( '__get_option' , 'tc_logo_upload') ) ;
+            $logo_resize        = esc_attr( tc__f( '__get_option' , 'tc_logo_resize') );
+            $accepted_formats   = array('jpg', 'jpeg', 'png' ,'gif');
+            $filetype 		= wp_check_filetype ($logo_src);
+            
+            ob_start();
+            
+            if( !empty($logo_src) && in_array( $filetype['ext'], $accepted_formats ) ) :
+                
+                $width = '';
+                $height = '';
+                //get height and width from image, we check if getimagesize can be used first with the error control operator
+                if ( @getimagesize($logo_src) ) {
+                    list( $width, $height ) = getimagesize($logo_src);
+                }
+                //logo styling option
+                $logo_img_style = ( 1 == $logo_resize) ? 'style="max-width:250px;max-height:100px"' : '';
+?>              
+                <div class="brand span3">
+<?php 
+                tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); 
+?>
+                    <h1>
+                        <a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' , 'display' ) ); ?> | <?php bloginfo( 'description' ); ?>">
+                            <img src="<?php echo $logo_src ?>" alt="<?php _e( 'Back Home' , 'customizr' ); ?>" <?php echo $logo_img_style ?> width="<?php echo $width ?>" height="<?php echo $height ?>"/>
+                        </a>
+                    </h1>
+                </div>
 
-       	ob_start();
-		?>
+<?php 
+            else : 
+?>
+                <div class="brand span3 pull-left">
+<?php 
+                    tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); 
+?>
+                    <h1>
+                        <a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' , 'display' ) ); ?> | <?php bloginfo( 'description' ); ?>">
+                            <?php bloginfo( 'name' ); ?>
+                        </a>
+                    </h1>
+                </div>
 
-		<?php if( !empty($logo_src) && in_array( $filetype['ext'], $accepted_formats ) ) :?>
-			
-		<?php
-			$width = '';
-			$height = '';
-			//get height and width from image, we check if getimagesize can be used first with the error control operator
-			if ( @getimagesize($logo_src) ) {
-				list( $width, $height ) = getimagesize($logo_src);
-			}
-			//logo styling option
-       		$logo_img_style			= ( 1 == $logo_resize) ? 'style="max-width:250px;max-height:100px"' : '';
-		?>
-
-	        <div class="brand span3">
-	          <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
-	           <h1><a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' , 'display' ) ); ?> | <?php bloginfo( 'description' ); ?>"><img src="<?php echo $logo_src ?>" alt="<?php _e( 'Back Home' , 'customizr' ); ?>" <?php echo $logo_img_style ?> width="<?php echo $width ?>" height="<?php echo $height ?>"/></a>
-	           </h1>
-	        </div>
-
-	    <?php else : ?>
-
-          <div class="brand span3 pull-left">
-          	<?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
-             <h1><a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' , 'display' ) ); ?> | <?php bloginfo( 'description' ); ?>"><?php bloginfo( 'name' ); ?></a>
-              </h1>
-          </div>
-
-	   <?php endif; ?>
-	   <?php 
-	   $html = ob_get_contents();
-       ob_end_clean();
-       echo apply_filters( 'tc_logo_title_display', $html );
+<?php
+            endif; 
+?>
+<?php 
+            $html = ob_get_contents();
+            
+            ob_end_clean();
+            
+            echo apply_filters( 'tc_logo_title_display', $html );
 	}
 
 

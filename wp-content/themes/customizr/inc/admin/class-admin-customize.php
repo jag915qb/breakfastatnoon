@@ -128,15 +128,16 @@ class TC_customize {
 	 * @since Customizr 3.0.11
 	 */
 	function tc_skin_choices() {
-	    return array( 
-		'blue.css' 		=> 	__( 'Blue' , 'customizr' ),
-		'green.css'  	=> 	__( 'Green' , 'customizr' ),
-		'yellow.css' 	=> 	__( 'Yellow' , 'customizr' ),
-		'orange.css' 	=> 	__( 'Orange' , 'customizr' ),
-		'red.css'		=> 	__( 'Red' , 'customizr' ),
-		'purple.css'	=> 	__( 'Purple' , 'customizr' ),
-		'grey.css'		=>	__( 'Grey' , 'customizr' ),
-		'black.css' 	=> 	__( 'Black' , 'customizr' )
+            return array( 
+                'blue.css'      =>  __( 'Blue' , 'customizr' ),
+                'green.css'     =>  __( 'Green' , 'customizr' ),
+                'yellow.css'    =>  __( 'Yellow' , 'customizr' ),
+                'orange.css'    =>  __( 'Orange' , 'customizr' ),
+                'red.css'       =>  __( 'Red' , 'customizr' ),
+                'purple.css'    =>  __( 'Purple' , 'customizr' ),
+                'grey.css'      =>  __( 'Grey' , 'customizr' ),
+                'black.css'     =>  __( 'Black' , 'customizr' ),
+                'custom.css'    =>  __( 'Custom' , 'customizr' ),
 		);
 	}
 
