@@ -47,8 +47,7 @@ class TC_custom {
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Le styles -->
-    <link href="http://wbpreview.com/previews/WB0G1X0T6/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://wbpreview.com/previews/WB0G1X0T6/assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    
     <link href="http://wbpreview.com/previews/WB0G1X0T6/assets/fancybox/jquery.fancybox.css" rel="stylesheet">
     <link href="http://wbpreview.com/previews/WB0G1X0T6/assets/app/css/style.css" rel="stylesheet">
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -57,38 +56,7 @@ class TC_custom {
     <![endif]-->
 </head>
 <body>
-    <div class="navbar navbar-static-top">
-        <div class="container">
-            <div class="navbar-form well pull-right unit-bg">
-                <div class="login-input pull-left">
-                    <input class="span2" type="text" placeholder="Email">
-                    <input class="span2" type="password" placeholder="Password">
-                </div>
-                <ul class="signup nav pull-right">
-                    <li>
-                        <button type="submit" class="btn btn-primary">
-                            Log in</button></li>
-                    <li class="dropdown btn-group">
-                        <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                            Sign up <span class="caret"></span>
-                        </button>
-                        <div class="dropdown-menu" role="menu">
-                            <form style="margin-bottom: 0">
-                            <p>
-                                <input type="text" placeholder="Email"></p>
-                            <p>
-                                <input type="password" placeholder="Password"></p>
-                            <p>
-                                <input type="text" placeholder="Username"></p>
-                            <p>
-                                <input class="btn btn-success" type="submit" value="Start"></p>
-                            </form>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    
     <div class="container">
         <div class="row">
             <div class="span3">

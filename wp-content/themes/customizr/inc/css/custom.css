@@ -846,6 +846,7 @@ a:focus {
 .container {
   margin-right: auto;
   margin-left: auto;
+  text-align: center;
   *zoom: 1;
 }
 .container:before,
@@ -3765,7 +3766,6 @@ input[type="submit"].btn.btn-mini {
   overflow: visible;
 }
 .navbar .brand {
-  float: left;
   display: block;
   padding: 10px 20px 10px;
   margin-left: -20px;
@@ -4841,6 +4841,10 @@ input[type="submit"].btn.btn-mini {
 .pull-left {
   float: left;
 }
+.pull-center {
+  float: center;
+  text-align: center;
+}
 .hide {
   display: none;
 }
@@ -5307,17 +5311,23 @@ h2.comments-title:before {
     -------------------------------------------------- */
 
 .tc-header {
+    
+  
   min-height: 45px;
-  background: white;
-  border-bottom: 10px solid #e9eaee;
-  border-top: 5px solid #0088cc;
+  /* background: white; */
+  /*border-bottom: 10px solid #e9eaee; */
+  /*border-top: 5px solid #0088cc;*/
   z-index: 200;
+  margin-right: auto;
+  margin-left: auto;
+  width: 1170px;"
+  
 }
 /* LOGO / TITLE
     -------------------------------------------------- */
 
 .tc-header .brand {
-  float: left;
+  
   text-align: center;
   margin: 0px;
   padding: 0px;
@@ -5400,6 +5410,13 @@ h2.comments-title:before {
 
 }
 h2.site-description {
+  font-size: 18px;
+  padding-top: 0px;
+  line-height: 20px;
+  font-style: italic;
+  color: #0088cc;
+}
+.custom-site-description {
   font-size: 18px;
   padding-top: 0px;
   line-height: 20px;
@@ -6749,7 +6766,7 @@ div.hook-tree a.debug-tip:before,
   [class*="span"] {
     float: left;
     min-height: 1px;
-    margin-left: 30px;
+    margin-left: 0px; /*30px*/
   }
   .container,
   .navbar-static-top .container,
@@ -6854,7 +6871,7 @@ div.hook-tree a.debug-tip:before,
   [class*="span"] {
     float: left;
     min-height: 1px;
-    margin-left: 30px;
+    margin-left: 0px;/*30px*/
   }
   .container,
   .navbar-static-top .container,
@@ -7306,7 +7323,7 @@ div.hook-tree a.debug-tip:before,
     margin-left: 0;
   }
   .controls-row [class*="span"] + [class*="span"] {
-    margin-left: 30px;
+    margin-left: 0px; /*30px*/
   }
   input.span12,
   textarea.span12,
@@ -7374,7 +7391,7 @@ div.hook-tree a.debug-tip:before,
     margin-left: 0;
   }
   .controls-row [class*="span"] + [class*="span"] {
-    margin-left: 30px;
+    margin-left: 0px;/*30px*/
   }
   input.span12,
   textarea.span12,
@@ -7440,7 +7457,7 @@ div.hook-tree a.debug-tip:before,
     margin-left: -30px;
   }
   .thumbnails > li {
-    margin-left: 30px;
+    margin-left: 0px;/*30px*/
   }
   .row-fluid .thumbnails {
     margin-left: 0;
@@ -8824,7 +8841,7 @@ p {
   .tc-header .brand {
     float: none;
     text-align: center;
-    width: 100%;
+    /*width: 100%;*/
   }
   .container.navbar-wrapper {
     margin-bottom: 0;

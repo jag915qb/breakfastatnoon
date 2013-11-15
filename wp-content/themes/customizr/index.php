@@ -12,10 +12,10 @@
 
 <?php tc__f('rec' , __FILE__ , __FUNCTION__ ); ?>
 
-<div id="main-wrapper" class="container">
-    <div class="span9">
-        <div class="row unit-block">
-            <div class="span9 unit-bg">
+<div id="main-wrapper" class="container pull-center">
+    <div >
+        <div class="">
+            <div class="unit-bg span12 pull-center">
     
 <!-- SECTION 1 -->
     <?php 
@@ -31,8 +31,6 @@
 <!-- END SECTION Custom -->
         
         <div class="row">
-            
-            
             
 <!-- SECTION 2 -->
             <?php do_action( '__before_article_container'); ##hook of left sidebar?>

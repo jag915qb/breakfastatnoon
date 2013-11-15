@@ -26,7 +26,7 @@
 		
 		<?php do_action( '__before_header' ); ?>
 
-	   	<header class="tc-header clearfix row-fluid" role="banner">
+	   	<header class="tc-header clearfix" role="banner" >
 			
 			<?php do_action( '__header' ); ?>
 
