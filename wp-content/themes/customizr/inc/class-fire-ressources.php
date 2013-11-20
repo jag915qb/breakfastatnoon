@@ -20,14 +20,17 @@ class TC_ressources {
     function __construct () {
 
         self::$instance =& $this;
-        add_filter( '__customizr_styles'						, array( $this , 'tc_customizer_styles' ) );
-        add_action( 'wp_enqueue_scripts'						, array( $this , 'tc_enqueue_customizer_styles' ) );
-        add_action( 'wp_enqueue_scripts'						, array( $this , 'tc_scripts' ) );
+        add_filter( '__customizr_styles', array( $this , 'tc_customizer_styles' ) );
+        add_action( 'wp_enqueue_scripts', array( $this , 'tc_enqueue_customizer_styles' ) );
+        add_action( 'wp_enqueue_scripts', array( $this , 'tc_scripts' ) );
+        
+		add_action( 'wp_enqueue_scripts', array( $this , 'tc_custom_styles' ) );
+		add_action( 'wp_enqueue_scripts', array( $this , 'tc_custom_scripts' ) );
         
         //Based on options
-        add_action ( 'wp_head'                 					, array( $this , 'tc_write_custom_css' ), 20 );
-        add_action ( 'wp_enqueue_scripts'						, array( $this , 'tc_optional_scripts' ) );
-        add_action ( 'wp_footer'								, array( $this , 'tc_generated_scripts' ) , 20);
+        add_action ( 'wp_head'           , array( $this , 'tc_write_custom_css' ), 20 );
+        add_action ( 'wp_enqueue_scripts', array( $this , 'tc_optional_scripts' ) );
+        add_action ( 'wp_footer'		 , array( $this , 'tc_generated_scripts' ) , 20);
     }
 
 
@@ -107,8 +110,7 @@ class TC_ressources {
 
 	      //modernizr (must be loaded in wp_head())
 	      wp_enqueue_script( 'modernizr' ,TC_BASE_URL . 'inc/js/modernizr.min.js' ,array( 'jquery' ),null, $in_footer = false);
-
-	   }
+	}
 
 
 
@@ -164,19 +166,20 @@ class TC_ressources {
 	 * @package Customizr
 	 * @since Customizr 3.0.5
 	 */
-	 function tc_generated_scripts() {
-	 	//record for debug
+	function tc_generated_scripts() {
+		//record for debug
 	 	tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
 		//is fancy box option active?
 		$tc_fancybox = tc__f( '__get_option' , 'tc_fancybox' );
-
-	 	if ( $tc_fancybox == 1) {
+		
+		if ( $tc_fancybox == 1) {
 			//get option from customizr
 			$autoscale = tc__f( '__get_option' , 'tc_fancybox_autoscale') ;
 			//($autoscale == 1) ? _e('true') : _e('false');
 
 		  	?>
 			<script type="text/javascript">
+				
 				jQuery(document).ready(function( $) {
 			      // Fancybox
 			      $("a.grouped_elements").fancybox({
@@ -191,9 +194,53 @@ class TC_ressources {
 			      });
 				});
 			</script>
-
+		
 		  	<?php
 		}//end if
 	}
+	
+	/**
+	 * Loads custom scripts for Customizer theme.
+	 * 
+	 * @uses wp_enqueue_script() to manage script dependencies
+	 * @package Customizr
+	 * @since Customizr 1.0
+	 */
+	function tc_custom_scripts() {
+		//record for debug
+		tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
+		
+		wp_enqueue_script( 'bootstrap-transition' ,TC_BASE_URL . 'inc/js/bootstrap-transition.js' ,array( 'jquery' ),null, $in_footer = true);
+		wp_enqueue_script( 'bootstrap-alert' ,TC_BASE_URL . 'inc/js/bootstrap-alert.js' ,array( 'jquery' ),null, $in_footer = true);
+		wp_enqueue_script( 'bootstrap-modal' ,TC_BASE_URL . 'inc/js/bootstrap-modal.js' ,array( 'jquery' ),null, $in_footer = true);
+		wp_enqueue_script( 'bootstrap-dropdown' ,TC_BASE_URL . 'inc/js/bootstrap-dropdown.js' ,array( 'jquery' ),null, $in_footer = true);
+		wp_enqueue_script( 'bootstrap-scrollspy' ,TC_BASE_URL . 'inc/js/bootstrap-scrollspy.js' ,array( 'jquery' ),null, $in_footer = true);
+		wp_enqueue_script( 'bootstrap-tab' ,TC_BASE_URL . 'inc/js/bootstrap-tab.js' ,array( 'jquery' ),null, $in_footer = true);
+		wp_enqueue_script( 'bootstrap-tooltip' ,TC_BASE_URL . 'inc/js/bootstrap-tooltip.js' ,array( 'jquery' ),null, $in_footer = true);
+		wp_enqueue_script( 'bootstrap-popover' ,TC_BASE_URL . 'inc/js/bootstrap-popover.js' ,array( 'jquery' ),null, $in_footer = true);
+		wp_enqueue_script( 'bootstrap-button' ,TC_BASE_URL . 'inc/js/bootstrap-button.js' ,array( 'jquery' ),null, $in_footer = true);
+		wp_enqueue_script( 'bootstrap-collapse' ,TC_BASE_URL . 'inc/js/bootstrap-collapse.js' ,array( 'jquery' ),null, $in_footer = true);
+		wp_enqueue_script( 'bootstrap-carousel' ,TC_BASE_URL . 'inc/js/bootstrap-carousel.js' ,array( 'jquery' ),null, $in_footer = true);
+		wp_enqueue_script( 'bootstrap-typeahead' ,TC_BASE_URL . 'inc/js/bootstrap-typeahead.js' ,array( 'jquery' ),null, $in_footer = true);
+		wp_enqueue_script( 'jquery.fancybox.pack' ,TC_BASE_URL . 'inc/js/jquery.fancybox.pack.js' ,array( 'jquery' ),null, $in_footer = true);
 
+		wp_enqueue_script( 'custom_script' ,TC_BASE_URL . 'inc/js/custom_script.js' ,array( 'jquery' ),null, $in_footer = true);
+		wp_enqueue_script( 'jquery.backstretch.min' ,TC_BASE_URL . 'inc/js/jquery.backstretch.min.js' ,array( 'jquery' ),null, $in_footer = false);
+		
+	}
+
+
+	/**
+	 * Registers and enqueues Customizr stylesheets
+	 * @package Customizr
+	 * @since Customizr 1.1
+	 */
+	function tc_custom_styles() {
+		//record for debug
+		tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
+      	
+		wp_enqueue_style( 'custom_style' , TC_BASE_URL . 'inc/css/custom_style.css', array( 'customizr-skin' ),CUSTOMIZR_VER , $media = 'all'  );
+		
+	}
+	
 }//end of TC_ressources

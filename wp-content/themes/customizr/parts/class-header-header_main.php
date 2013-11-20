@@ -24,7 +24,7 @@ class TC_header_main {
         //html > head actions
         add_action ( '__before_body',   array( $this , 'tc_head_display' ));
         add_action ( 'wp_head',         array( $this , 'tc_favicon_display' ));
-
+//style="border:20px solid; border-color:#ff0000 #0000ff;"
         //html > header actions
         add_action ( '__before_main_wrapper', 'get_header');
         // JG add_action ( '__header',        array( $this , 'tc_logo_title_display' ) , 10 );
@@ -291,7 +291,7 @@ class TC_header_main {
      */
     function tc_custom_header_display() {
         tc__f('rec' , __FILE__ , __FUNCTION__, __CLASS__ );
-        
+		
         // pulled here from tc_logo_title_display 
         $logo_src           = esc_url ( tc__f( '__get_option' , 'tc_logo_upload') ) ;
         $logo_resize        = esc_attr( tc__f( '__get_option' , 'tc_logo_resize') );
@@ -307,11 +307,10 @@ class TC_header_main {
                 <div class="navbar notresp row-fluid pull-center" >
                     <div class="navbar-inner" role="navigation">
                         <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
-                        
-                        <div class="pull-center row-fluid">
-                            <?php do_action( '__navbar' ); //hook of social, tagline, menu, ordered by priorities 10, 20, 30 
+                        <br />
+<?php
 //********* NEW STUFF         
-        
+			// Logo image or text
             if( !empty($logo_src) && in_array( $filetype['ext'], $accepted_formats ) ) :
                 
                 $width = '';
@@ -323,42 +322,44 @@ class TC_header_main {
                 //logo styling option
                 $logo_img_style = ( 1 == $logo_resize) ? 'style="max-width:250px;max-height:100px"' : '';
 ?>              
-                <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
-                <a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' , 'display' ) ); ?> | <?php bloginfo( 'description' ); ?>"><img src="<?php echo $logo_src ?>" alt="<?php _e( 'Back Home' , 'customizr' ); ?>" <?php echo $logo_img_style ?> width="<?php echo $width ?>" height="<?php echo $height ?>"/></a>
+                <a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' , 'display' ) ); ?> | <?php bloginfo( 'description' ); ?>">
+                
+                <img style="box-shadow: 10px 10px 5px #888888;" src="<?php echo $logo_src ?>" alt="<?php _e( 'Back Home' , 'customizr' ); ?>" <?php echo $logo_img_style ?> width="<?php echo $width ?>" height="<?php echo $height ?>"/></a>
       <?php else : ?>
-                <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
+				
                 <a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' , 'display' ) ); ?> | <?php bloginfo( 'description' ); ?>"><?php bloginfo( 'name' ); ?></a>
       <?php endif; ?>
             
             
-            
-            <div class="custom-site-description span7 inside site-description">
+<?php 		// Tagline ?>
+            <div class="custom-site-description inside site-description ">
                 <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
                 <?php bloginfo( 'description' ); ?>
             </div>
             
 <?php         
-            //class added if not resp
-            $class  =  ('resp' == $resp) ? '':'span5' 
-?>          
-            <div class="social-block <?php echo $class ?>">
+			// Social Icons ?>
+            <div class="social-block" >
                 <?php if ( 0 != tc__f( '__get_option', 'tc_social_in_header') ) : 
                         tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); 
                         echo tc__f( '__get_socials' );
                       endif; ?>
             </div><!--.social-block-->
+            <br />
             
+            <?php // Add menu ?>
+			<div class="pull-center row-fluid">
+            	<?php do_action( '__navbar' ); //hook of social, tagline, menu, ordered by priorities 10, 20, 30             
             
-            
-<?php //********* NEW STUFF ?>
+//********* NEW STUFF ?>
             
                         </div><!-- .row-fluid -->
                     </div><!-- /.navbar-inner -->
                 </div><!-- /.navbar notresp -->
                 
                 
-                <div class="navbar resp">
-                    <div class="navbar-inner" role="navigation">
+                <div class="navbar resp" >
+                    <div class="navbar-inner" role="navigation" >
                         <?php do_action( '__navbar' , 'resp' ); //hook of social, menu, ordered by priorities 10, 20?>
                     </div><!-- /.navbar-inner -->
                 </div><!-- /.navbar resp -->

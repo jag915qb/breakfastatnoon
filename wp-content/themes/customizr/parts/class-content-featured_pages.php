@@ -54,7 +54,7 @@ class TC_featured_pages {
     			<div class="container marketing">
             <?php tc__f( 'tip' , __FUNCTION__ , __CLASS__, __FILE__ ); ?>
 
-    				<div class="row widget-area" role="complementary">
+    				<div class="widget-area" role="complementary">
 
     					<?php foreach ( $areas as $area) : ?>
 

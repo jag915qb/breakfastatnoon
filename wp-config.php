@@ -1,4 +1,5 @@
 <?php
+// Wordpress login U: admin  P: whitebmw
 /**
  * The base configurations of the WordPress.
  *

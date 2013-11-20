@@ -30,10 +30,64 @@
             <?php do_action( '__custom_at_begining'); ##my custom hook?>
 <!-- END SECTION Custom -->
         
-        <div class="row">
+        <div class="">
             
 <!-- SECTION 2 -->
-            <?php do_action( '__before_article_container'); ##hook of left sidebar?>
+            <?php do_action( '__before_article_container'); ##hook of left sidebar
+            /* Add the following 
+                <div class="container">
+        <div class="">
+            <div class="span3">
+                <div class="well unit-bg">
+                    <a href="list.html">
+                        <img src="http://wbpreview.com/previews/WB0G1X0T6/assets/app/img/logo.png" alt="logo" width="100%"></a>
+                </div>
+                <div class="well unit-bg">
+                    <ul class="nav nav-list">
+                        <li class="active"><a href="list.html"><i class="icon-asterisk"></i>&nbsp;Today's Deal</a></li>
+                        <li><a href="list.html"><i class="icon-headphones"></i>&nbsp;Products</a></li>
+                        <li><a href="list.html"><i class="icon-briefcase"></i>&nbsp;Escapes</a></li>
+                        <li><a href="list.html"><i class="icon-tag"></i>&nbsp;Past Deals</a></li>
+                        <li><a href="#"><i class="icon-comment"></i>&nbsp;Discussion</a></li>
+                        <li class="divider"></li>
+                        <li><a href="contact.html"><i class="icon-question-sign"></i>&nbsp;Help</a></li>
+                    </ul>
+                </div>
+                <div class="well unit-bg">
+                    <p>
+                        <i class="icon-envelope"></i>&nbsp;Get Deal Alerts</p>
+                    <div class="input-append">
+                        <input class="span2" id="inputEmail" type="text" placeholder="Enter your email">
+                        <button class="btn" type="button">
+                            OK</button>
+                    </div>
+                </div>
+                <div class="well unit-bg">
+                    <p>
+                        <i class="icon-heart"></i>&nbsp;Follow Us</p>
+                    <ul class="unstyled social">
+                        <li>
+                            <div class="fb-like-box" data-href="http://www.facebook.com/pages/Twitter/278029242253904"
+                                data-width="292" data-show-faces="false" data-stream="false" data-header="false">
+                            </div>
+                        </li>
+                        <li>
+                            <ul class="unstyled socialicons">
+                                <li class="Facebook"><a href="#" title="Facebook">Facebook</a></li>
+                                <li class="Twitter"><a href="#" title="Twitter">Twitter</a></li>
+                                <li class="Pinterest"><a href="#" title="Pinterest">Pinterest</a></li>
+                                <li class="RSS"><a href="#" title="RSS">RSS</a></li>
+                                <li class="Email"><a href="#" title="Email">Email</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    */
+            
+            ?>
 <!-- END SECTION 2 -->
                     
             
@@ -41,7 +95,7 @@
 <!-- SECTION 3 -->                    
                 <div class="<?php echo tc__f( '__screen_layout' , tc__f ( '__ID' ) , 'class' ) ?> article-container">
                 <!-- ACTUAL HTML RENDERS --->
-                <?php /*
+                <?php /* JG removed 
                 <div class="span12 article-container">
                     
                     <article id="post-1" class="post-1 post type-post status-publish format-standard hentry category-uncategorized row-fluid">
