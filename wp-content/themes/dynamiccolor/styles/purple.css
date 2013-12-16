@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+.nav-bar	{ background:url(../images/header-upper-swirl.png) #55008c no-repeat right; }
+body		{ background:url(../images/purple-bg.png) repeat-x #a39d9c;}
+
+
+a:hover						{ color:#7f45c1;}
+.post a:hover				{ color:#7f45c1; }
+.single-navigation a:hover	{ color:#7f45c1;}											
+
+.postmetadata a:hover 		{ color:#55008c;} 												
+.post .readMore:hover		{ color:#55008c;}
+a							{ color:#55008c;}
+.pageTitle					{ color:#55008c;}
+.post a						{ color:#55008c;}
+#wp-calendar td 			{ color:#55008c}
+#wp-calendar thead			{ background-color: #55008c;}
+
+.postmetadata a				{ color:#666;}
+
+

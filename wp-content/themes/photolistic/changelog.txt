@@ -1,0 +1,20 @@
+Photolistic Change Log
+----------------------
+----------------------
+
+This is the changelog for the Photolistic theme. If you have any problems updating your theme, get in touch with me at http://buzzrain.com.
+
+13-02-2012 - version 1.1
+----------------
+ - Replaced hard-coded links with the links using a filtered output method.
+ - Removed the contextual help function.
+ - Solved the static homepage issue
+ - Remade the styles in the widget menu
+ - Added the previous & next links
+ - Fixed the Tag Cloud on IE7 bug.
+ - Replaced all the slugs for one unique slug (photolistic_)
+ - Removed $pl_option = pl_get_global_options();
+
+29-01-2012 - version 1.0
+----------------
+ - First version

@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+.nav-bar	{ background:url(../images/header-upper-swirl.png) #242424 no-repeat right; }
+body		{ background:url(../images/black-bg.png) repeat-x #979797;}
+
+
+a:hover						{ color:#884311;}
+.post a:hover				{ color:#884311;}
+.single-navigation a:hover	{ color:#884311;}	
+
+.postmetadata a:hover 		{ color:#00638c;} 												
+.post .readMore:hover		{ color:#00638c;}
+a							{ color:#555555;}
+.pageTitle					{ color:#555555;}
+.post h2 a 					{ color:#555555;}
+.post a						{ color:#00638c;}
+.postmetadata a				{ color:#666;}
+
+
+#wp-calendar td 		{ color:#555555}
+#wp-calendar thead		{ background-color: #555555;}
+

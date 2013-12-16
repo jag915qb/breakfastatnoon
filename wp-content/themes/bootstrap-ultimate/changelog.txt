@@ -1,0 +1,39 @@
+v.1.2.3
+* Bugfix: Google Font variants not loading into select input on change (when .chosen is enabled).
+
+v.1.2.2
+* Bugfix: Stored Googlefont variant not being displayed properly.
+* Bugfix: Googlefont variants not being applied properly (font-weight, font-style).
+* Bugfix: "Full width" post/pages not displaying full.
+* Added: "Review theme" suggestion link in about section.
+* Added: "Google Analytics Notice" informing users that the setting will be removed in next release due to "plugin territory"
+
+v.1.2.2
+* Bugfix: Stored Googlefont variant not being displayed properly.
+* Bugfix: Googlefont variants not being applied properly (font-weight, font-style).
+* Bugfix: "Full width" post/pages not displaying full.
+* Added: "Review theme" suggestion link in about section.
+* Added: "Google Analytics Notice" informing users that the setting will be removed in next release due to "plugin territory"
+
+v.1.2.1
+* Removed default favicon to comply with guidelines.
+* Removed "custom-functions-sample" file to comply with guidelines.
+* Removed "review theme" recommendation to comply with guidelines.
+
+v.1.2.0
+* Added post specific JS / CSS
+* Added an option to display ALL posts in modules¿
+* Added order & orderby options to modules.
+* Added infinite-scroll¿
+* Fixed typography size setting not taking effect
+* Added top navigation to typography options.
+* Added custom-functions-sample.php to add custom functions.
+* Automatically add .cboxElement to image gallery links (that links to file only) when lightbox is enabled.
+* Added more tips-help-.
+* Added a one-time only support message to suggest user to review theme on themes dir - can be opted-out.
+* Revised theme description.
+* Changed theme screenshot.
+* Minor CSS adjustments..
+
+¿modules: carousel-highlights-featurettes etc..
+¿infinite scroll: load posts via ajax.

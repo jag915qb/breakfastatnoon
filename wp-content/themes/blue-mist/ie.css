@@ -1,0 +1,46 @@
+/* IE Hacks
+*******************************/
+html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+
+* html hr {margin: 0; /* IE6 */}
+*+html hr {margin: 0; /* IE7 */}
+
+.zoom,
+#header .pages,
+#main,
+#content .post,
+#content .title,
+#content .postdata,
+#footer,
+.navigation
+{ zoom:1; }
+
+.clear { display: inline-block }
+.clear { display: block }
+* html .clear{ height: 1% }
+
+.wordwrap {
+	word-wrap: break-word;
+}
+
+sub,
+sup {
+  font-size:1.0em;
+}
+
+
+#header .pages ul {
+    filter: alpha(opacity = 80);
+}
+
+#header .pages .left {
+    background:none;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='images/header-pages-left.png');
+}
+
+#header .pages .right {
+    background:none;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src='images/header-pages-right.png');
+}
+
+/**/
