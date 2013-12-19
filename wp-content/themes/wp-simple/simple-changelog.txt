@@ -1,3 +1,6 @@
+v1.1.0	- Use get_option('date_format') per discussion: "[theme-reviewers] Hard coding date format"
+	- Migrated to new layout tags
+
 v1.0.9	- Updated User Guide 
 	- Remove empty array items from options aray
 	- Remove info array items from options array because feature is being removed

@@ -344,7 +344,7 @@ function nimbus_options_to_head() {
             // If set to full width fixed banner but no banner is set
             if (empty($nimbus_full_width_banner) && (nimbus_get_option('reminder_images') == "on")) {
             ?>
-                header #fixed_banner { background-image: url(<?php echo get_template_directory_uri(); ?>/images/preview/crater-lake.jpg); }
+                header #fixed_banner { background-image: url(<?php echo get_template_directory_uri(); ?>/images/preview/coffee_bar1.jpg); }
             <?php
             
             // If set to full width fixed banner and banner is set

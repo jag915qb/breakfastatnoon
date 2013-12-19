@@ -5,7 +5,7 @@ global $post;
     $banner_option = nimbus_get_option('nimbus_banner_option');
     $full_width_banner_url = nimbus_get_option('nimbus_full_width_banner');
     if (empty($full_width_banner_url)) {
-        $full_width_banner_url = get_template_directory_uri() . '/images/preview/crater-lake.jpg';
+        $full_width_banner_url = get_template_directory_uri() . '/images/preview/coffee_bar1.jpg';
     }
     
 
