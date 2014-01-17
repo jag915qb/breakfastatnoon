@@ -1,0 +1,2 @@
+[14-Feb-2013 17:04:18 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/laper0/public_html/lafashionsnob/wp-content/themes/twentyten/index.php on line 16
+[27-May-2013 15:02:22 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/laper0/public_html/lafashionsnob/wp-content/themes/twentyten/404.php on line 10
